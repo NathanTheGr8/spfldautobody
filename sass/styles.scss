@@ -1,0 +1,331 @@
+// Import Bootstrap Compass integration
+@import "bootstrap-compass";
+
+// Import custom Bootstrap variables
+@import "bootstrap-variables";
+
+// Import Bootstrap for Sass
+@import "bootstrap";
+
+//Font Aweasome
+//@import "font-awesome-compass";
+//@import "font-awesome";
+
+
+
+$brand: #990000;
+$offwhite: #F7F7F7;
+$offwhiteblue: #F6F9FA;
+$offblack: #2B2D2E;
+
+.brand {
+	color: $brand;
+}
+
+html {
+	margin: 0px;
+	padding: 0px;
+}
+
+body {
+	width: 100%;
+	height: 100%;
+	padding: 0px;
+	margin: 60px 0 0 0;
+	//background-image: image-url("bonfire.jpg");// no-repeat center center fixed;
+	//.scrolled {
+	//    background: url("footer.jpg")no-repeat center center fixed;
+	//}
+}
+
+/* Site Wide Code */
+p {
+	//font-family: 'Leelawadee', sans-serif;
+}
+
+h1,h2,h3,h4,h5,h6 {
+	//font-family: 'Leelawadee', sans-serif;
+	text-align: center;
+}
+a {
+	color: $brand;
+	&:hover, &:focus, &:active, &.active{
+		color: darken($brand,20);
+	}
+}
+
+.big-logo {
+	height: 200px;
+	width: auto;
+}
+
+/* End Site Wide Code */
+
+/* Custom Nav */
+$link-color: #ffffff;
+
+.container-fluid {
+	margin: 0px;
+	padding: 0px;
+}
+
+.navbar-custom{
+	transition-duration: 1s;
+	border-color: rgba(255, 255, 255, 0.5);
+	background-color: rgba(240, 240, 240, 0.30);
+	.navbar-header {
+		.navbar-toggle {
+			color: #ffffff;
+		    border-color: darken($brand,15);
+		    background-color: $brand;
+		    .icon-bar {
+		      background-color: darken($brand,15);
+		    }
+		    &:hover, &:focus {
+		      background-color: darken($brand,30);
+		    }
+		}
+		.navbar-brand {
+			margin: 0;
+			padding: 0;
+			color: #ffffff;
+			&:hover, &:focus, &:active, &.active{
+				color: darken(#ffffff,20);
+			}
+			.logo {
+				margin: 0;
+				padding: 5px;
+				height: 50px;
+				width: auto;
+				&:hover, &:focus, &:active, &.active {
+					//background-color: lighten($brand, 30);
+				}
+			}
+			//span {
+			//	&:hover, &:focus, &:active, &.active{
+			//		color: darken($brand,20);
+			//	}
+			//}
+
+		}
+	}
+    .navbar-collapse {
+    	.navbar-nav {
+    		li {
+    			color: #ffffff;
+    			a {
+    				color: $link-color;
+    				font-weight: 900;
+    				&:hover, &:focus, &:active, &.active {
+    					background-color: darken($brand, 10);
+    				}
+    			}
+    			.active {
+    				background-color: lighten($brand, 5);
+    			}
+    		}
+    	}
+          
+    } 
+      
+}
+
+@media (min-width: 768px) {
+	.navbar-custom{
+		border-color: transparent;
+		background-color: rgba(34,34,34,0.2);
+		//background-color: transparent;
+		.navbar-header {
+
+			.navbar-brand {
+				color: #ffffff;
+				&:hover, &:focus, &:active, &.active{
+
+				}
+			}
+		}
+	    .navbar-collapse {
+	    	.navbar-nav {
+	    		li {
+	    			color: #ffffff;
+	    			a {
+	    				color: $link-color;
+	    				&:hover, &:focus, &:active, &.active {
+	    					background-color: darken($brand, 10);
+	    				}
+	    			}
+	    			.active {
+	    				background-color: lighten($brand, 5);
+	    			}
+	    		}
+	    	}
+	          
+	    } 
+	    &.navbar-shrink {
+	        padding: 10px 0;
+	        background-color: #cccccc;
+	        .navbar-brand {
+	        	font-size: 1.5em;
+	        }
+	    }
+	}
+}
+/* end nav */
+
+
+/* Carosel (welcome section) */
+	/* Carousel Fade Effect */
+.welcome {
+	.carousel {
+		.carousel-fade {
+			.item {
+				//-webkit-transition: opacity 1s linear;
+			    //-moz-transition: opacity 1s linear;
+			    //-ms-transition: opacity 1s linear;
+			    //-o-transition: opacity 1s linear;
+			    //transition: opacity 1s linear;
+			    //opacity: .5;
+			    transition: 3s ease-in-out left;
+			    -webkit-transition: 3s ease-in-out left;
+			    -moz-transition: 3s ease-in-out left;
+			    -o-transition: 3s ease-in-out left;
+			}
+
+			.active {
+				opacity: 1;
+				.left, .right {
+					left: 0;
+				    z-index: 2;
+				    opacity: 0;
+				    filter: alpha(opacity=0);
+				}
+			}
+		}
+		.slide1, .slide2, .slide3, .slide4 {
+			//position: fixed;
+		    height: 100vh;
+		    width: 100%;
+		    background-position: no-repeat center center;
+			-webkit-background-size: cover;
+			-moz-background-size: cover;
+			-o-background-size: cover;
+			background-size: cover;
+		}
+		.slide1 {
+		    background-image: image-url('carousel/1.jpg')
+		}
+		.slide2 {
+		    background-image: image-url('carousel/2.jpg')
+		}
+		.slide3 {
+		    background-image: image-url('carousel/3.jpg')
+		}
+		.slide4 {
+		    background-image: image-url('carousel/4.jpg')
+		}
+		.carousel-overlay {
+			width: 100%;
+			margin: 0 auto;
+			position: absolute;
+			//top: 6%;
+			top: 0;
+		    h1,h2,h3,h4,h5,h6 {
+				text-align: center;
+				color: white;
+				margin: 0;
+				padding: 0;
+				font-family: 'Leelawadee', sans-serif;
+				font-weight: 700;
+			}
+
+			h1 {
+		    	font-size: 54px;
+				line-height: 1.0;
+			}
+
+			h2 {
+		    	font-size: 30px;
+				line-height: 1.0;
+				//font-family: 'Lato', sans-serif;
+				//font-family: 'Abril Fatface', cursive;
+				//font-family: 'PT Sans', sans-serif;
+			}
+
+			h3 {
+		    	font-size: 20px;
+				line-height: 1.0;
+				//font-family: 'Josefin Slab', serif;
+				font-weight: 400;
+				font-family: 'Abril Fatface';
+			}
+
+			i {
+				color: $brand;
+				margin: 10px auto 0 auto;
+				padding: 0;
+				&:hover, &:focus, &:active, &.active{
+					color: darken($brand,20);
+				}
+			}
+			
+
+			
+			@media (min-width: 768px) {
+				.logo {
+					height: 100px;
+					width: auto;
+				}
+				.welcome {
+					.carousel {
+						.carousel-overlay {
+							top: 50px;
+						}
+					}
+				}
+				
+
+				h1 {
+			    	font-size: 86px;
+				}
+
+				h2 {
+			    	font-size: 56px;
+				}
+
+				h3 {
+			    	font-size: 30px;
+				}
+			}
+		}
+	}
+}
+
+/* Footer */
+footer {
+	background-color: #222222;
+	padding: 20px 15px 40px 15px;
+	margin: 0px;
+	color: #ffffff;
+
+	.icon{
+		color: $brand;
+	}
+
+	h1,h2,h3,h4,h5,h6 {
+		line-height: 1.3;
+
+	}
+
+	p{
+		font-size: 16px;
+		line-height: 1.5;
+	}
+
+	@media (min-width: 768px) {
+		p{
+			font-size: 20px;
+		}
+	}
+
+}
+/* End of Footer */
